@@ -8,3 +8,20 @@
 #include <string>
 
 using namespace std;
+
+void sort_by_name::sort(animal **animals,int n)
+{
+    for(int i=0;i<n;i++)
+    {
+        for(int j=0; j<n-i-1;j++)
+        {
+            if(animals[j]->get_name() > animals[j+1]->get_name())
+            {
+                animal *temp = animals[j];
+                animals[j] = animals[j+1];
+                animals[j+1] = temp;
+
+            }
+        }
+    }
+} 
